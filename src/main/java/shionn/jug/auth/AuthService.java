@@ -58,7 +58,8 @@ public class AuthService {
     @Produces(MediaType.APPLICATION_JSON)
     public User register(Authentification auth) {
         String pass = DigestUtils.md5Hex(auth.getPassword());
-        return users.insert(new User(auth.getUser(), pass)).getSavedObject();
+        User user = users.insert(new User(auth.getUser(), pass)).getSavedObject();
+        return user;
     }
 
 }

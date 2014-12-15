@@ -20,9 +20,8 @@ var Navigation = function() {
 	};
 
 };
-
+var nav = new Navigation();
 $(function() {
-	var nav = new Navigation();
 	$("a[page]").on("click", function() {
 		nav.openPage($(this).attr("page"));
 	});
